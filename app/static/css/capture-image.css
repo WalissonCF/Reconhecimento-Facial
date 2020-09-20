@@ -1,3 +1,16 @@
-body {
-    background-color: aquamarine;
+#content-image-user {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#player {
+    margin-top: -500px;
+}
+
+body {
+    background-color: black;
+}
+

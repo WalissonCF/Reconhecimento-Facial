@@ -10,10 +10,14 @@
 
 {% block content %}
 
-<h1>Login</h1>
-<video id="player" autoplay></video>
-<button id="capture">Capture</button>
-<canvas id="snapshot" width=320 height=240></canvas>
+<div id="content-image-user">
+    <video id="player" autoplay></video>
+    <div class="button-capture">
+        <button id="capture">Capture</button>
+        <canvas id="snapshot" width=320 height=240></canvas>
+    </div>
+</div>
+
 <script src=" {{ url_for('static', filename="js/capture-image.js") }}"></script>
 
 {% endblock content %}
