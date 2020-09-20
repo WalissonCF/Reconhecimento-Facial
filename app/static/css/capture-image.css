@@ -33,3 +33,10 @@
     background: linear-gradient(90deg, #2ac790, #a2de96);
     z-index: 999;
 }
+
+#snapshot {
+    display: flex;
+    margin-left: 65%;
+    border-radius: 50px;
+    position: fixed;
+}
