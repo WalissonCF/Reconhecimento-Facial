@@ -5,19 +5,28 @@
 {% block head %}
 
 <link rel="stylesheet" href="{{ url_for('static', filename="css/capture-image.css") }}">
+<link rel="stylesheet" href="{{ url_for('static', filename="css/main.css") }}">
+<script src=" {{ url_for('static', filename="js/effect-button.js") }}"></script>
 
 {% endblock head%}
 
 {% block content %}
-
 <div id="content-image-user">
     <video id="player" autoplay></video>
-    <div class="button-capture">
-        <button id="capture">Capture</button>
-        <canvas id="snapshot" width=320 height=240></canvas>
-    </div>
+</div>
+<div id="button-capture">
+    <button id="capture">Capture</button>
+    <canvas id="snapshot" width=500 height=375></canvas>
+</div>
+<div id="image-wave">
+    <img src="{{ url_for('static', filename="images/wave.png") }}" >
 </div>
 
+<!-- <img id="sign-in" src="{{ url_for('static', filename="images/sign-in.svg") }}" > -->
+
+  
+
 <script src=" {{ url_for('static', filename="js/capture-image.js") }}"></script>
+
 
 {% endblock content %}

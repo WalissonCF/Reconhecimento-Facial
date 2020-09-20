@@ -1,16 +1,43 @@
+#image-wave {
+    /* background-image: url('../images/wave.png'); */
+    position: fixed;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
 #content-image-user {
-    width: 500px;
-    height: 500px;
     display: flex;
-    justify-content: center;
+    margin-top: 105px;
+    margin-left: 65%;
+}
+
+#content-image-user #player {
+    width: 500px;
+    border-radius: 50px;
+    position: fixed;
+    z-index: 998;
+}
+
+#capture {
+    width: 400px;
+    height: 45px;
+    border-radius: 75px;
+    position: fixed;
     align-items: center;
+    justify-content: center;
+    margin-top: 350px;
+    margin-left: 68%;
+    border: none;
+    background: linear-gradient(90deg, #2ac790, #a2de96);
+    z-index: 999;
 }
 
-#player {
-    margin-top: -500px;
-}
-
-body {
-    background-color: black;
+#snapshot {
+    display: flex;
+    margin-left: 65%;
+    border-radius: 50px;
+    position: fixed;
 }
 
