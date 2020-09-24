@@ -18,9 +18,14 @@
     <canvas id="snapshot" width=500 height=375></canvas>
 </div>
 <div id="image-wave">
-    <img src="{{ url_for('static', filename="images/wave.png") }}" >
+    <img src="{{ url_for('static', filename="images/wave.png") }}">
 </div>
 
+<form action="#">
+    <input id="user" type="text" required>
+    <input id="password" type="password" required>
+    <input type="submit" value="Enviar">
+</form>
 <!-- <img id="sign-in" src="{{ url_for('static', filename="images/sign-in.svg") }}" > -->
 
 <script src=" {{ url_for('static', filename="js/capture-image.js") }}"></script>
