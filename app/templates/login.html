@@ -5,12 +5,24 @@
 {% block head %}
 
 <link rel="stylesheet" href="{{ url_for('static', filename="css/capture-image.css") }}">
-<link rel="stylesheet" href="{{ url_for('static', filename="css/main.css") }}">
+<link rel="stylesheet" href="{{ url_for('static', filename="css/menu.css") }}">
+<link rel="stylesheet" href="{{ url_for('static', filename="css/responsive.css") }}">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
 {% endblock head%}
 
 {% block content %}
-<div id="content-image-user">
+
+<div id="content-menu">
+    <div class="menu-cells">
+        <a id="home" href="#">Home</a>
+        <a id="sign-in" href="#">Entrar</a>
+        <a id="sign-up" href="#">Cadastre-se</a>
+        <a id="over" href="#">Sobre</a>
+    </div>
+</div>
+
+<!-- <div id="content-image-user">
     <video id="player" autoplay></video>
 </div>
 <div id="button-capture">
@@ -25,7 +37,7 @@
     <input id="user" type="text" required>
     <input id="password" type="password" required>
     <input type="submit" value="Enviar">
-</form>
+</form> -->
 <!-- <img id="sign-in" src="{{ url_for('static', filename="images/sign-in.svg") }}" > -->
 
 <script src=" {{ url_for('static', filename="js/capture-image.js") }}"></script>

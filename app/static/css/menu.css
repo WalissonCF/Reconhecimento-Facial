@@ -1,0 +1,34 @@
+#content-menu {
+    margin-top: 15px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+}
+
+#home, #sign-in, #sign-up, #over {
+    text-decoration: none;
+}
+
+
+.menu-cells {
+    width: auto;
+    height: 40px;
+    margin-left: 50%;
+}
+
+a {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    width: auto;
+    margin-left: 300px;
+}
+
+a:hover {
+    color: #80ed99;
+}
+
+a+a {
+    margin-left: 40px;
+    flex-direction: column;
+}
