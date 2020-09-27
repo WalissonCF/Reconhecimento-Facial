@@ -1,13 +1,11 @@
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1300px) {
     #content-menu {
-        /* background-color: red; */
         height: 40px;
         width: 100%;
         display: flex;
     }
 
     .menu-cells {
-        /* background-color: blue; */
         width: 100%;
         height: 40px;
         margin-left: 0%;
@@ -15,6 +13,6 @@
 
     a {
         width: auto;
-        margin-left: 280px;
+        margin-left: 330px;
     }
 }

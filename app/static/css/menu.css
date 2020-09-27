@@ -1,3 +1,7 @@
+:root {
+    --buttom-color: #7ae582;
+}
+
 #content-menu {
     margin-top: 15px;
     height: 40px;
@@ -5,27 +9,48 @@
     display: flex;
 }
 
-#home, #sign-in, #sign-up, #over {
+#home, #sign-in, #sign-up {
     text-decoration: none;
 }
 
+#sign-up {
+    border-radius: 20px;
+    width: 150px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: var(--buttom-color);
+    border: none;
+    color: white;
+    margin-left: 40px;
+}
+
+#sign-up:hover {
+    color: var(--buttom-color);
+    border-style: solid;
+    background-color: white;
+    border-color: var(--buttom-color);
+    border: solid 1;
+}
 
 .menu-cells {
     width: auto;
     height: 40px;
     margin-left: 50%;
+    z-index: 999;
 }
 
 a {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
+    font-size: 14px;
     color: black;
     width: auto;
-    margin-left: 300px;
+    margin-left: 330px;
 }
 
 a:hover {
-    color: #80ed99;
+    color: var(--buttom-color);
 }
 
 a+a {

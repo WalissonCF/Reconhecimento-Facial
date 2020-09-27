@@ -7,7 +7,8 @@
 <link rel="stylesheet" href="{{ url_for('static', filename="css/capture-image.css") }}">
 <link rel="stylesheet" href="{{ url_for('static', filename="css/menu.css") }}">
 <link rel="stylesheet" href="{{ url_for('static', filename="css/responsive.css") }}">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@500;700&display=swap"
+    rel="stylesheet">
 
 {% endblock head%}
 
@@ -16,9 +17,8 @@
 <div id="content-menu">
     <div class="menu-cells">
         <a id="home" href="#">Home</a>
-        <a id="sign-in" href="#">Entrar</a>
-        <a id="sign-up" href="#">Cadastre-se</a>
-        <a id="over" href="#">Sobre</a>
+        <a id="sign-in" href="#">Login</a>
+        <button id="sign-up">Sign-up</button>
     </div>
 </div>
 
@@ -28,12 +28,12 @@
 <div id="button-capture">
     <button id="capture">Capture</button>
     <canvas id="snapshot" width=500 height=375></canvas>
-</div>
-<div id="image-wave">
+</div> -->
+<!-- <div id="image-wave">
     <img src="{{ url_for('static', filename="images/wave.png") }}">
-</div>
+</div> -->
 
-<form action="#">
+<!-- <form action="#">
     <input id="user" type="text" required>
     <input id="password" type="password" required>
     <input type="submit" value="Enviar">
