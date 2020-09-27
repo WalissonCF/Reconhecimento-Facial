@@ -22,7 +22,7 @@
 }
 
 #capture {
-    z-index: 999;
+    z-index: 998;
     margin-top: 280px;
     margin-left: -323px;
     height: 30px;
@@ -44,7 +44,7 @@
     height: 300px;
 }
 
-#info {
+.info {
     margin-top: -300px;
     margin-left: 480px;
     background-color: black;
@@ -52,4 +52,23 @@
     border-radius: 65px;
     width: 400px;
     height: 300px;
+    z-index: 9999;
+}
+
+.text-info-p {
+    margin-top: -100px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: red;
+}
+
+#content-info {
+    z-index: 999;
+}
+
+.svg-alert {
+    margin-top: -80px;
+    margin-left: 662px;
 }
