@@ -1,42 +1,55 @@
-#image-wave {
-    /* background-image: url('../images/wave.png'); */
-    position: fixed;
-    height: 100%;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
 #content-image-user {
+    /* background-color: red; */
+    margin-left: 480px;
+    margin-top: 80px;
     display: flex;
-    margin-top: 105px;
-    margin-left: 65%;
+    width: 405px;
+    height: auto;
 }
 
-#content-image-user #player {
+#player {
+    border-radius: 65px;
+    width: 400px;
+}
+
+#button-capture {
+    /* background-color: red; */
+    margin-left: 480px;
+    margin-top: -300px;
+    display: flex;
     width: 500px;
-    border-radius: 50px;
-    position: fixed;
-    z-index: 998;
+    height: 300px;
 }
 
 #capture {
-    width: 400px;
-    height: 45px;
-    border-radius: 75px;
-    position: fixed;
-    align-items: center;
-    justify-content: center;
-    margin-top: 350px;
-    margin-left: 68%;
-    border: none;
-    background: linear-gradient(90deg, #2ac790, #a2de96);
     z-index: 999;
+    margin-top: 280px;
+    margin-left: -323px;
+    height: 30px;
+    width: 250px;
+    border-radius: 65px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: var(--buttom-color);
+    border: none;
+    color: white;
+
 }
 
 #snapshot {
-    display: flex;
-    margin-left: 65%;
-    border-radius: 50px;
-    position: fixed;
+    /* background-color: blue; */
+    border-radius: 65px;
+    width: 400px;
+    height: 300px;
+}
+
+#info {
+    margin-top: -300px;
+    margin-left: 480px;
+    background-color: black;
+    opacity: 15%;
+    border-radius: 65px;
+    width: 400px;
+    height: 300px;
 }
