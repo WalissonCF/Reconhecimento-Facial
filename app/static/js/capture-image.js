@@ -4,7 +4,6 @@ const captureButton = document.getElementById('capture');
 
 const snapshotAAA = document.getElementById('snapshot').value;
 
-
 const handleSuccess = function (stream) {
     // Attach the video stream to the video element and autoplay.
     player.srcObject = stream;
@@ -17,7 +16,16 @@ captureButton.addEventListener('click', function () {
         snapshotCanvas.height);
 
     player.style.visibility = 'hidden';
+    captureButton.style.visibility = 'hidden';
 });
 
 navigator.mediaDevices.getUserMedia({ video: true })
     .then(handleSuccess);
+
+navigator.getUserMedia({ video: true }, function () {
+    console.log("Okay");
+}, function () {
+    // webcam is not available
+    alert("Você não possui webcam");
+    console.log("Erro!");
+});

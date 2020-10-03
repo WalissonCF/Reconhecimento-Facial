@@ -45,12 +45,7 @@
 
     #capture {
         margin-left: -323px;
-    }
-
-    .info {
-        margin-left: 140px;
-    }
-    
+    } 
 }
 
 @media screen and (max-width: 930px) {
@@ -81,9 +76,5 @@
 
     #capture {
         margin-left: -323px;
-    }
-    
-    .info {
-        margin-left: 140px;
     }
 }
