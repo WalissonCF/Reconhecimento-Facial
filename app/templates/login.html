@@ -43,15 +43,15 @@
     <img src="{{ url_for('static', filename="images/wave.png") }}">
 </div> -->
 
-<form action="#">
-    <input id="user" type="text" required>
-    <input id="password" type="password" required>
-    <input type="submit" value="Enviar">
+<form id="content-login" action="#" hidden>
+    <input id="user" type="text" placeholder="Usuario" required>
+    <input id="password" type="password" placeholder="Senha" required>
+    <input id="submit" type="submit" value="Entrar">
 </form>
 <!-- <img id="sign-in" src="{{ url_for('static', filename="images/sign-in.svg") }}" > -->
 
 <script>
-    // Script Jquery
+    // Script Javascript + Jquery
     setTimeout(function () {
         $('#content-info').fadeOut('fast');
     }, 15000);

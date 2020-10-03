@@ -1,8 +1,7 @@
 const player = document.getElementById('player');
 const snapshotCanvas = document.getElementById('snapshot');
 const captureButton = document.getElementById('capture');
-
-const snapshotAAA = document.getElementById('snapshot').value;
+const login = document.getElementById('content-login');
 
 const handleSuccess = function (stream) {
     // Attach the video stream to the video element and autoplay.
@@ -17,6 +16,7 @@ captureButton.addEventListener('click', function () {
 
     player.style.visibility = 'hidden';
     captureButton.style.visibility = 'hidden';
+    login.removeAttribute("hidden");
 });
 
 navigator.mediaDevices.getUserMedia({ video: true })
@@ -26,6 +26,6 @@ navigator.getUserMedia({ video: true }, function () {
     console.log("Okay");
 }, function () {
     // webcam is not available
-    alert("Você não possui webcam");
+    alert("Você não possui webcam!");
     console.log("Erro!");
 });

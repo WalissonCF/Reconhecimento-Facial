@@ -1,0 +1,22 @@
+#user, #password {
+    border-radius: 65px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: small;
+    padding: 5px;
+    border-style: solid;
+    height: 30px;
+}
+
+#submit {
+    border-radius: 65px;
+    width: 170px;
+}
+
+#content-login {
+    /* background-color: red; */
+    width: 320px;
+    height: 200px;
+    align-items: center;
+    padding-top: 15px;
+}
