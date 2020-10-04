@@ -71,10 +71,53 @@
     }
 
     #button-capture {
-        margin-left: 140px;
+        margin-left: 265px;
     }
 
     #capture {
-        margin-left: -323px;
+        margin-left: -50px;
+    }
+
+    .svg-alert {
+        margin-left: -150px;
+    }
+
+    .text-info-p {
+        margin-left: -670px;
+    }
+
+    #user, #password {
+        margin-left: -320px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    a {
+        width: auto;
+        margin-left: 110px;
+    }
+
+    #content-image-user {
+        margin-left: 60px;
+    }
+
+    #button-capture {
+        margin-left: 188px;
+    }
+
+    #capture {
+        margin-left: -50px;
+    }
+
+    .svg-alert {
+        margin-left: -230px;
+    }
+
+    .text-info-p {
+        margin-left: -830px;
+    }
+
+    #user, #password {
+        margin-left: -360px;
     }
 }
