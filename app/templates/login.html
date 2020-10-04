@@ -25,7 +25,10 @@
     <video id="player" autoplay></video>
 </div>
 <div id="button-capture">
-    <canvas id="snapshot" width=500 height=375></canvas>
+    <canvas id="snapshot" width=500 height=500 
+    style="border-style: solid;
+    border-color: #7ae582;
+    border: solid 1;" hidden></canvas>
     <button id="capture" class="particles-button">Capture</button>
 </div>
 <div id="content-info">
@@ -38,11 +41,6 @@
         Para continuar o processo de reconhecimento facial <br> clique no botão acima.
     </p>
 </div>
-
-<!-- <div id="image-wave">
-    <img src="{{ url_for('static', filename="images/wave.png") }}">
-</div> -->
-
 <form id="content-login" action="#" hidden>
     <input id="user" type="text" placeholder="Usuario" required>
     <input id="password" type="password" placeholder="Senha" required>
