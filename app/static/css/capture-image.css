@@ -14,8 +14,8 @@
 
 #button-capture {
     /* background-color: red; */
-    margin-left: 480px;
-    margin-top: -300px;
+    margin-left: 605px;
+    margin-top: -330px;
     display: flex;
     width: 500px;
     height: 300px;
@@ -23,8 +23,8 @@
 
 #capture {
     z-index: 998;
-    margin-top: 280px;
-    margin-left: -323px;
+    margin-top: 315px;
+    margin-left: -50px;
     height: 30px;
     width: 250px;
     border-radius: 65px;
@@ -34,27 +34,26 @@
     background-color: var(--buttom-color);
     border: none;
     color: white;
-
 }
 
 #snapshot {
     /* background-color: blue; */
-    border-radius: 65px;
-    width: 400px;
-    height: 300px;
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
 }
 
 #content-info {
-    /* background-color: red; */
+    background-color: red;
     border-radius: 65px;
     width: 400px;
-    height: 100px;
+    height: 0px;
     margin-left: 480px;
 }
 
 .svg-alert {
     margin-left: 186px;
-    margin-top: 15px;
+    margin-top: 50px;
 }
 
 .text-info-p {
@@ -62,5 +61,5 @@
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-size: 11px;
-    margin-top: 5px;
+    margin-top: 8px;
 }

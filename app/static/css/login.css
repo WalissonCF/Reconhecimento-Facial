@@ -3,20 +3,41 @@
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-size: small;
-    padding: 5px;
     border-style: solid;
+    padding: 7px;
+    width: 280px;
     height: 30px;
+    z-index: initial;
+}
+
+#user, #password, #submit {
+    margin-bottom: 10px;
 }
 
 #submit {
     border-radius: 65px;
-    width: 170px;
+    width: 220px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    border: none;
+    background-color: #7ae582;
+    margin-left: 28px;
+}
+
+#submit:hover {
+    color: var(--buttom-color);
+    border-style: solid;
+    background-color: white;
+    border-color: var(--buttom-color);
+    border: solid 1;
 }
 
 #content-login {
     /* background-color: red; */
-    width: 320px;
-    height: 200px;
-    align-items: center;
-    padding-top: 15px;
+    width: 300px;
+    height: 110px;
+    margin-left: 540px;
+    margin-top: -120px;
+    z-index: 999;
 }
