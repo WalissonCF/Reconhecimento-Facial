@@ -42,3 +42,13 @@
     margin-top: -120px;
     z-index: 999;
 }
+
+.image-background {
+    /* background-color: red; */
+    margin-top: 400px;
+    position: fixed;
+    height: 200px;
+    left: 20px;
+    /* bottom: 0; */
+    z-index: -1;
+}

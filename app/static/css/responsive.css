@@ -86,8 +86,8 @@
         margin-left: -670px;
     }
 
-    #user, #password {
-        margin-left: -320px;
+    #content-login{
+        margin-left: 205px !important;
     }
 }
 
@@ -117,7 +117,7 @@
         margin-left: -830px;
     }
 
-    #user, #password {
-        margin-left: -360px;
+    #content-login{
+        margin-left: 125px !important;
     }
 }

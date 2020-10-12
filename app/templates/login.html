@@ -14,6 +14,7 @@
 {% endblock head%}
 
 {% block content %}
+<img class="image-background" src="{{ url_for('static', filename="images/enter.png") }}">
 <div id="content-menu">
     <div class="menu-cells">
         <a id="home" href="index">Home</a>
@@ -46,8 +47,6 @@
     <input id="password" type="password" placeholder="Senha" required>
     <input id="submit" type="submit" value="Entrar">
 </form>
-<!-- <img id="sign-in" src="{{ url_for('static', filename="images/sign-in.svg") }}" > -->
-
 <script>
     // Script Jquery
     setTimeout(function () {
