@@ -4,6 +4,7 @@ const captureButton = document.getElementById('capture');
 const login = document.getElementById('content-login');
 const aviso = document.querySelector('.svg-alert');
 const mensagemDeAviso = document.querySelector('.text-info-p');
+const buttonsConfirm = document.querySelector('.confirm');
 
 const handleSuccess = function (stream) {
     // Attach the video stream to the video element and autoplay.
@@ -28,10 +29,17 @@ captureButton.addEventListener('click', function () {
 
     desativaCampos(player);
     desativaCampos(captureButton);
-    removeAtributos(login, "hidden");
+    if ($("#content-login").length) { 
+        removeAtributos(login, "hidden"); 
+    } 
     desativaCampos(aviso);
     desativaCampos(mensagemDeAviso);
     removeAtributos(snapshotCanvas, "hidden");
+    if ($(".confirm").length) { 
+        removeAtributos(buttonsConfirm, "hidden"); 
+    }
+
+
 });
 
 navigator.mediaDevices.getUserMedia({ video: true })

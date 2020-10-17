@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename="css/menu.css") }}">
 <link rel="stylesheet" href="{{ url_for('static', filename="css/register.css") }}">
 <link rel="stylesheet" href="{{ url_for('static', filename="css/responsive.css") }}">
+<link rel="stylesheet" href="{{ url_for('static', filename="css/capture-image.css") }}">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@500;700&display=swap"
     rel="stylesheet">
 
@@ -20,7 +21,7 @@
         <a id="sign-in" href="login">Login</a>
         <button id="sign-up" href="register">Sign-up</button>
     </div>
-    <form action="">
+    <form action="#" id="content-form-register">
         <fieldset>
             <h1 id="title">Dados para cadastro</h1>
             <div class="field-group">
@@ -76,13 +77,44 @@
                 </div>
             </div>
             <div class="field">
-                <button>Proximo</button>
+                <button id="next-page-register">Proximo</button>
             </div>
         </fieldset>
     </form>
 </div>
+<div class="capture-image-user" hidden>
+    <div id="content-image-user">
+        <video id="player" autoplay></video>
+    </div>
+    <div id="button-capture">
+        <canvas class="canva-snapshot" id="snapshot" width=1000 height=1000 style="border-style: solid;
+    border-color: #7ae582;
+    border: solid 1;" hidden></canvas>
+        <button id="capture" class="particles-button">Capture</button>
+    </div>
+    <div id="content-info">
+        <svg class="svg-alert" width="1.5em" height="1.4em" viewBox="0 0 16 16" class="bi bi-exclamation-square-fill"
+            fill="#ffee32" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+        </svg>
+        <p class="text-info-p"> Para realização do reconhecimento facial é preciso possuir uma Webcam. <br>
+            Para continuar o processo de reconhecimento facial <br> clique no botão acima.
+        </p>
+    </div>
+</div>
+<div class="confirm" hidden>
+    <button id="register-user">Cadastrar</button>
+    <p>Essa imagem está correta?</p>
+    <button id="yes">Sim</button>
+    <button id="no">Não</button>
+</div>
 <script src="{{ url_for('static', filename="js/register.js") }}"></script>
+<script src="{{ url_for('static', filename="js/capture-image.js") }}"></script>
 <script>
     $("#cep").mask("00000-000");
+    setTimeout(function () {
+        $('#content-info').fadeOut('fast');
+    }, 15000);
 </script>
 {% endblock content %}
