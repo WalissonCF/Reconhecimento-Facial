@@ -1,5 +1,7 @@
 from flask import render_template, request, redirect
 from app import app
+from app.models import register as rg
+from app.models import address 
 from json import dumps
 import os
 
@@ -19,13 +21,8 @@ def register():
     return render_template('register.html')
 
 
-@app.route("/validation", methods=['POST'])
-def validation():
+@app.route("/registerUser", methods=['POST'])
+def register_user():
 
-    user = dumps(request.form['user'])
-    print(user)
-
-    password = dumps(request.form['password'])
-    print(password)
-
-    return "ok"
+   
+    return  address.register_address(request.form)
