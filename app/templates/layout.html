@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap/bootstrap.min.css") }}">
     <link rel="stylesheet" href="{{ url_for('static', filename="css/main.css") }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <title>{% block title %}Projeto{% endblock %}</title>
     {% block head %}
     {% endblock head%}
 </head>
+
 <body>
 
     {% block content %}
@@ -18,4 +22,5 @@
 
     <script src="{{ url_for('static', filename="js/bootstrap/bootstrap.min.js") }}"></script>
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-#user, #password {
+/* #user, #password {
     border-radius: 65px;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
@@ -12,9 +12,68 @@
 
 #user, #password, #submit {
     margin-bottom: 10px;
+} */
+
+form {
+    background-color: white;
+    margin: 80px auto;
+    /* Fill */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 300px;
+    margin-top: -150px;
+    margin-left: 525px;
 }
 
-#submit {
+form fieldset {
+    margin-top: 0px;
+    border: 0;
+}
+
+form .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+form input {
+    background-color: #f0f0f5;
+    border: 0;
+    padding: 8px 24px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form .field {
+    margin-left: 24px;
+}
+
+form #submit {
+    margin-left: 24px;
+    width: 235px;
+    height: 40px;
+    background-color: #2fd86e;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;
+    margin-top: 5px;
+    transition: background-color 400ms;
+}
+
+form #submit:hover {
+    background-color: #2fd86e;
+}
+
+/* #submit {
     border-radius: 65px;
     width: 220px;
     height: 30px;
@@ -32,16 +91,16 @@
     background-color: white;
     border-color: var(--buttom-color);
     border: solid 1;
-}
+} */
 
-#content-login {
-    /* background-color: red; */
+/* #content-login {
+    /* background-color: red;
     width: 300px;
     height: 110px;
     margin-left: 540px;
     margin-top: -120px;
     z-index: 999;
-}
+} */
 
 .image-background {
     /* background-color: red; */

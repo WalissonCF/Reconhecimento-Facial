@@ -19,15 +19,14 @@
     <div class="menu-cells">
         <a id="home" href="index">Home</a>
         <a id="sign-in" href="#">Login</a>
-        <button id="sign-up">Sign-up</button>
+        <button id="sign-up" onclick="window.location.href = 'register'">Sign-up</button>
     </div>
 </div>
 <div id="content-image-user">
     <video id="player" autoplay></video>
 </div>
 <div id="button-capture">
-    <canvas id="snapshot" width=500 height=500 
-    style="border-style: solid;
+    <canvas id="snapshot" width=500 height=500 style="border-style: solid;
     border-color: #7ae582;
     border: solid 1;" hidden></canvas>
     <button id="capture" class="particles-button">Capture</button>
@@ -42,10 +41,20 @@
         Para continuar o processo de reconhecimento facial <br> clique no botão acima.
     </p>
 </div>
-<form id="content-login"  hidden>
-    <input id="user" type="text" placeholder="Usuario" required>
-    <input id="password" type="password" placeholder="Senha" required>
-    <input id="submit" type="submit" value="Entrar">
+<form id="content-login" hidden>
+    <fieldset>
+        <div class="field">
+            <label for="user">Usuário</label>
+            <input id="user" type="text" placeholder="Usuario" required>
+        </div>
+        <div class="field">
+            <label for="password" class="label-password">Senha</label>
+            <input id="password" type="password" placeholder="Senha" required>
+        </div>
+        <div class="button-login">
+            <input id="submit" type="submit" value="Entrar">
+        </div>
+    </fieldset>
 </form>
 <script>
     // Script Jquery

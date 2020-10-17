@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block title %}Cadastro{% endblock %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename="css/menu.css") }}">
+<link rel="stylesheet" href="{{ url_for('static', filename="css/register.css") }}">
+<link rel="stylesheet" href="{{ url_for('static', filename="css/responsive.css") }}">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@500;700&display=swap"
+    rel="stylesheet">
+
+{% endblock head%}
+
+{% block content %}
+
+<div id="content-menu">
+    <div class="menu-cells">
+        <a id="home" href="index">Home</a>
+        <a id="sign-in" href="login">Login</a>
+        <button id="sign-up" href="register">Sign-up</button>
+    </div>
+    <form action="">
+        <fieldset>
+            <h1 id="title">Dados para cadastro</h1>
+            <div class="field-group">
+                <div class="field">
+                    <label for="name">Nome</label>
+                    <input id="name" type="text" placeholder="Seu nome" required>
+                </div>
+                <div class="field">
+                    <label for="last-name">Sobrenome</label>
+                    <input id="last-name" type="text" placeholder="Sobrenome" required>
+                </div>
+            </div>
+            <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" type="text" placeholder="E-mail" required>
+            </div>
+            <div class="field-group">
+                <div class="field">
+                    <label for="password">Senha</label>
+                    <input id="password" type="password" placeholder="Senha" required>
+                </div>
+                <div class="field">
+                    <label for="confirm-password">Confirme sua senha</label>
+                    <input id="confirm-password" type="password" placeholder="Confirme sua senha" required>
+                </div>
+            </div>
+            <div class="field">
+                <label for="cep">CEP</label>
+                <input id="cep" type="text" placeholder="CEP" data-mask="00000-000" required>
+            </div>
+            <div class="field-group">
+                <div class="field">
+                    <label for="street">Rua</label>
+                    <input id="street" type="text" placeholder="Rua" disabled>
+                </div>
+                <div class="field">
+                    <label for="number">Numero</label>
+                    <input id="number" type="text" placeholder="Nº">
+                </div>
+            </div>
+            <div class="field">
+                <label for="neighborhood">Bairro</label>
+                <input id="neighborhood" type="text" placeholder="Bairro" disabled>
+            </div>
+            <div class="field-group">
+                <div class="field">
+                    <label for="city">Cidade</label>
+                    <input id="city" type="text" placeholder="Cidade" disabled>
+                </div>
+                <div class="field">
+                    <label for="state">Estado</label>
+                    <input id="state" type="text" placeholder="Estado" disabled>
+                </div>
+            </div>
+            <div class="field">
+                <button>Proximo</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<script src="{{ url_for('static', filename="js/register.js") }}"></script>
+<script>
+    $("#cep").mask("00000-000");
+</script>
+{% endblock content %}
