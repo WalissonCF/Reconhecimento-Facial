@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, url_for
 from app import app
 from app.models import register as rg
 from app.models import address 
@@ -23,6 +23,9 @@ def register():
 
 @app.route("/registerUser", methods=['POST'])
 def register_user():
+    if rg.register(request.form) == "Register User":
+        redirect(url_for('index'), code=307)
+        return "ok"
+    else:
+        return  "error"
 
-   
-    return  address.register_address(request.form)
