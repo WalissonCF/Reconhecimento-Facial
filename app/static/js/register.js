@@ -1,15 +1,12 @@
-const password = document.getElementById('password');
-const confirmPassword = document.getElementById('confirm-password');
 const formPageRegister = document.getElementById('content-form-register');
 const buttonNextPageRegister = document.getElementById('next-page-register');
-const campoCep = document.getElementById('cep');
 const contentCaptureImagePageRegister = document.querySelector('.capture-image-user');
 
-$(confirmPassword).focusout(function () {
-    if (password.value != confirmPassword.value){
-        window.alert('Erouuuuuuuuuuuuuuuuu!');
+$("#confirm-password").focusout(function () {
+    if ($("#password").val() != $("#confirm-password").val()) {
+        window.alert('Senhas não conferem!');
     }
-        
+
 });
 
 function desativaCampos(campo) {
@@ -22,24 +19,26 @@ function removeAtributos(campo, atributoParaSerRemovido) {
     remove.removeAttribute(atributoParaSerRemovido);
 }
 
-function next(){
+function next() {
     desativaCampos(formPageRegister);
     removeAtributos(contentCaptureImagePageRegister, "hidden");
     removeAtributos(contentCaptureImagePageRegister, "hidden");
 }
 
-function teste(){
-    console.log("deu")
-}
-$(campoCep).focusout(function () {
-   var cep = $("#cep").val()
+$("#cep").focusout(function () {
 
-    $.get("https://viacep.com.br/ws/"+cep+"/json/", function(resultado){
+    $.get("https://viacep.com.br/ws/" + $("#cep").val() + "/json/", function (resultado) {
 
-        $("#street").val(resultado.logradouro)
-        $("#neighborhood").val(resultado.bairro)
-        $("#city").val(resultado.localidade)
-        $("#state").val(resultado.uf)
+        if (!resultado.erro) {
+            $("#street").val(resultado.logradouro)
+            $("#neighborhood").val(resultado.bairro)
+            $("#city").val(resultado.localidade)
+            $("#state").val(resultado.uf)
+        } else {
+            $("#cep").val("");
+            window.alert("Cep informado é invalido, digite novamente.");
+        }
+
     })
 
 });
