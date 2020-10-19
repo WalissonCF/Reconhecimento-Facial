@@ -23,5 +23,4 @@ def register_address(address_user):
     except Exception as ex:
         cnx.rollback()
         print(ex)
-        print("eeeeee")
         return "Error"
