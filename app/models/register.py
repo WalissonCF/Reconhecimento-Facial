@@ -15,16 +15,22 @@ def register(new_user):
         return "Register User"
     except (RegisteredUser, Exception) as e:
         print(e)
+        cnx.rollback()
         return "Error"
 
 
 def valid_username(username):
 
     query = """SELECT USERNAME FROM USERS 
-        WHERE username = '%s'"""
+        WHERE username = %s"""
 
     try:
-        consult.execute(query, username)
+        consult.execute(
+            query, 
+            (
+                username,
+            )
+        )
         result_query = consult.fetchone()
     except Exception as ex:
         print(ex)
@@ -35,12 +41,14 @@ def valid_username(username):
 
 def valid_email(email):
     query = """SELECT USERNAME FROM USERS 
-                WHERE email = '%s'"""
+                WHERE email = %s"""
 
     try:
         consult.execute(
             query,
-            email
+            (
+                email,
+            )
         )
         result_query = consult.fetchone()
     except Exception as ex:
