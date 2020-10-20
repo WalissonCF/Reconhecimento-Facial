@@ -44,15 +44,15 @@
 <form action="#" id="content-login" hidden>
     <fieldset>
         <div class="field">
-            <label for="user">Usuário</label>
-            <input id="user" type="text" placeholder="Usuario" required>
+            <label for="username">Usuário</label>
+            <input id="username" type="text" placeholder="Usuario" required>
         </div>
         <div class="field">
             <label for="password" class="label-password">Senha</label>
             <input id="password" type="password" placeholder="Senha" required>
         </div>
         <div class="button-login">
-            <input id="submit" type="submit" value="Entrar">
+            <input id="submit" onclick=loginUser() type="button" value="Entrar">
         </div>
     </fieldset>
 </form>
