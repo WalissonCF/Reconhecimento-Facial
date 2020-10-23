@@ -12,7 +12,6 @@ def register(new_user):
         valid_username(new_user.get('username'))
         valid_email(new_user.get('email'))
         register_user(new_user)
-        address.register_address(new_user)
         cnx.commit()
         return {"register":True}
     except (RegisteredUser, Exception) as e:
@@ -74,7 +73,8 @@ def register_user(new_user):
                 new_user.get('password')
             )
         )
-        
+        address.register_address(new_user)
     except Exception as ex:
         print(ex)
         cnx.rollback()
+        raise Exception('Erro ao cadastrar')
