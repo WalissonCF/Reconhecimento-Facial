@@ -34,9 +34,6 @@ def register():
 
 @app.route("/registerUser", methods=['POST'])
 def register_user():
-    if rg.register(request.form) == "Register User":
-        redirect(url_for('index'), code=307)
-        return "ok"
-    else:
-        return  "error"
+    return rg.register(request.form)
+
 
