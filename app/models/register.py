@@ -1,6 +1,7 @@
 from app.exceptions.registerException import RegisteredUser
 from app.models import address
 import mysql.connector
+import json
 
 cnx = mysql.connector.connect(user="root", database="recognition_system")
 consult = cnx.cursor()
@@ -12,11 +13,12 @@ def register(new_user):
         valid_email(new_user.get('email'))
         register_user(new_user)
         address.register_address(new_user)
-        return "Register User"
+        cnx.commit()
+        return {"register":True}
     except (RegisteredUser, Exception) as e:
         print(e)
         cnx.rollback()
-        return "Error"
+        return {"register":False}
 
 
 def valid_username(username):
@@ -72,7 +74,7 @@ def register_user(new_user):
                 new_user.get('password')
             )
         )
-        cnx.commit()
+        
     except Exception as ex:
         print(ex)
         cnx.rollback()

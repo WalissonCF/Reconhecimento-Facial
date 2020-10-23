@@ -9,11 +9,11 @@ def valid_user(username, password):
     credentials = search_username(username)
     if credentials:
         if credentials[1] == password:
-            return "entrou"
+            return  {"authenticated":True}
         else:
-            return "Acesso negado"
+            return  {"authenticated":False}
     else:
-        return "Acesso negado"
+        return {"authenticated":False}
 
 
 def search_username(user):
