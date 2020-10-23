@@ -28,7 +28,8 @@ function requestUser() {
 
 
     $.ajax(settings).done(function (response) {
-        console.log(response);
+        callback = JSON.parse(response)
+        console.log(callback)
     });
 
 }
