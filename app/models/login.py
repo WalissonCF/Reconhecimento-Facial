@@ -6,10 +6,10 @@ cnx = mysql.connector.connect(user="root", database="recognition_system")
 consult = cnx.cursor()
 
 
-def valid_user(username, password):
-    credentials = search_username(username)
+def valid_user(credential):
+    credentials = search_username(credential.get('username'))
     if credentials:
-        if credentials[1] == encoder(password):
+        if credentials[1] == encoder(credential.get('password')):
             return  {"authenticated":True}
         else:
             return  {"authenticated":False}
