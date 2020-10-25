@@ -37,7 +37,7 @@ form label {
     margin-bottom: 8px;
 }
 
-form .field-group .field + .field {
+form .field-group .field+.field {
     margin-left: 24px;
 }
 
@@ -67,9 +67,71 @@ form button:hover {
 }
 
 .confirm {
-    /* background-color: red; */
-    margin-top: 50px;
-    margin-left: 500px;
+    margin-top: 30px;
+    margin-left: 528px;
     width: 300px;
     height: 80px;
+}
+
+.confirm, .text-confirm {
+    text-align: center;
+}
+
+#register-user {
+    width: 300px;
+    height: 40px;
+    background-color: #2fd86e;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;
+    margin-top: 10px;
+    transition: background-color 400ms;
+}
+
+#register-user:hover {
+    background-color: white;
+    color: #2fd86e;
+}
+
+#yes {
+    margin-top: 10px;
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 40px;
+    background-color: #2fd86e;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;
+    margin-top: 10px;
+    transition: background-color 400ms;
+}
+
+#yes:hover {
+    background-color: white;
+    color: #2fd86e;
+}
+
+#no {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 40px;
+    background-color: tomato;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;
+    margin-top: 10px;
+    transition: background-color 400ms;
+}
+
+#no:hover {
+    background-color: white;
+    color: tomato;
 }

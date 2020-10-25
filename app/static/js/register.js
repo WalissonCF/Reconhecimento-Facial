@@ -1,8 +1,12 @@
 const formPageRegister = document.getElementById('content-form-register');
 const buttonNextPageRegister = document.getElementById('next-page-register');
+const buttonYes = document.getElementById('yes');
+const buttonNo = document.getElementById('no');
+const buttonConfirm = document.getElementById('register-user');
 const contentCaptureImagePageRegister = document.querySelector('.capture-image-user');
+const textConfirm = document.querySelector('.text-confirm');
 
-$("#confirm-password").focusout(function () {
+$("#confirm-password").focusout(function() {
     if ($("#password").val() != $("#confirm-password").val()) {
         window.alert('Senhas não conferem!');
     }
@@ -25,9 +29,16 @@ function next() {
     removeAtributos(contentCaptureImagePageRegister, "hidden");
 }
 
-$("#cep").focusout(function () {
+buttonYes.addEventListener('click', function() {
+    desativaCampos(buttonYes);
+    desativaCampos(buttonNo);
+    desativaCampos(textConfirm);
+    removeAtributos(buttonConfirm, "hidden");
+});
 
-    $.get("https://viacep.com.br/ws/" + $("#cep").val() + "/json/", function (resultado) {
+$("#cep").focusout(function() {
+
+    $.get("https://viacep.com.br/ws/" + $("#cep").val() + "/json/", function(resultado) {
 
         if (!resultado.erro) {
             $("#street").val(resultado.logradouro)
@@ -42,4 +53,3 @@ $("#cep").focusout(function () {
     })
 
 });
-
