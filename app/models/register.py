@@ -1,4 +1,5 @@
 from app.exceptions.registerException import RegisteredUser
+from app.models.passwordEncoder import encoder
 from app.models import address
 import mysql.connector
 import json
@@ -70,7 +71,7 @@ def register_user(new_user):
                 new_user.get('lastname'),
                 new_user.get('email'),
                 new_user.get('username'),
-                new_user.get('password')
+                encoder(new_user.get('password'))
             )
         )
         address.register_address(new_user)
