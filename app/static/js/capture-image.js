@@ -5,6 +5,7 @@ const login = document.getElementById('content-login');
 const aviso = document.querySelector('.svg-alert');
 const mensagemDeAviso = document.querySelector('.text-info-p');
 const buttonsConfirm = document.querySelector('.confirm');
+const buttonsConfirmImage = document.querySelector('.confirm-image');
 
 const handleSuccess = function (stream) {
     // Attach the video stream to the video element and autoplay.
@@ -38,8 +39,9 @@ captureButton.addEventListener('click', function () {
     if ($(".confirm").length) { 
         removeAtributos(buttonsConfirm, "hidden"); 
     }
-
-
+    if ($(".confirm-image").length) { 
+        removeAtributos(buttonsConfirmImage, "hidden"); 
+    }
 });
 
 navigator.mediaDevices.getUserMedia({ video: true })
