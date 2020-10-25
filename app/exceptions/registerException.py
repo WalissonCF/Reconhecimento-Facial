@@ -5,7 +5,7 @@ class RegisteredUser(Exception):
         
 
     def __str__(self):
-        return "Error: {}".format(self.mensagem)
+        return self.mensagem
 
 
 class RegisteredEmail(Exception):
@@ -15,5 +15,5 @@ class RegisteredEmail(Exception):
         
 
     def __str__(self):
-        return "Error: {}".format(self.mensagem)
+        return self.mensagem
 
