@@ -18,7 +18,7 @@ def register(new_user):
     except (RegisteredUser, Exception) as e:
         print(e)
         cnx.rollback()
-        return {"register":False}
+        return {"register":False, "error":str(e)}
 
 
 def valid_username(username):
