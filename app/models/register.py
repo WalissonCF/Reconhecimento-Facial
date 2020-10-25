@@ -38,7 +38,7 @@ def valid_username(username):
         print(ex)
 
     if result_query != None:
-        raise RegisteredUser('Usuario já cadastrado')
+        raise RegisteredUser('Usuario ja cadastrado')
 
 
 def valid_email(email):
@@ -57,7 +57,7 @@ def valid_email(email):
         print(ex)
 
     if result_query != None:
-        raise RegisteredUser('Email já registrado, informe outro email!')
+        raise RegisteredUser('Email ja registrado, informe outro email!')
 
 
 def register_user(new_user):
