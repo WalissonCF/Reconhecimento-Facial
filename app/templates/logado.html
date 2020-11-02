@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}Logado{% endblock %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename="css/responsive.css") }}">
+<link rel="stylesheet" href="{{ url_for('static', filename="css/logado.css") }}">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto:wght@500;700&display=swap"
+    rel="stylesheet">
+
+{% endblock head%}
+
+{% block content %}
+<img class="image-initial" src="{{ url_for('static', filename="images/wallpaper.jpg") }}">
+<img class="image-welcome" src="{{ url_for('static', filename="images/welcome.png") }}">
+<p class="text-logado">Você foi logado com sucesso!</p>
+{% endblock content %}

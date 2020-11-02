@@ -97,12 +97,8 @@
     </div>
 </div>
 <div class="confirm" hidden>
-    <button id="register-user" onclick=requestUser() hidden>Cadastrar</button>
-    <p class="text-confirm">Essa imagem está correta?</p>
-</div>
-<div class="confirm-image" hidden>
-    <button id="yes">Sim</button>
-    <button id="no">Não</button>
+    <button id="register-user" onclick=requestUser()>Cadastrar</button>
+    <p class="text-confirm" hidden>Cadastrado com sucesso!</p>
 </div>
 <script src="{{ url_for('static', filename="js/register.js") }}"></script>
 <script src="{{ url_for('static', filename="js/registerUser.js") }}"></script>

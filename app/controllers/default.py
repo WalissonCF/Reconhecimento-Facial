@@ -6,7 +6,6 @@ from app.models import address
 from json import dumps,dump
 import os
 
-@app.route("/index")
 @app.route("/")
 def index():
     return render_template('index.html')
@@ -15,6 +14,10 @@ def index():
 @app.route("/login")
 def login():
     return render_template('login.html')
+
+@app.route("/index")
+def logado():
+    return render_template('logado.html')
 
 @app.route("/validCredentials", methods=['POST'])
 def valid_credentials():

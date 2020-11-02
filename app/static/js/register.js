@@ -1,7 +1,5 @@
 const formPageRegister = document.getElementById('content-form-register');
 const buttonNextPageRegister = document.getElementById('next-page-register');
-const buttonYes = document.getElementById('yes');
-const buttonNo = document.getElementById('no');
 const buttonConfirm = document.getElementById('register-user');
 const contentCaptureImagePageRegister = document.querySelector('.capture-image-user');
 const textConfirm = document.querySelector('.text-confirm');
@@ -9,7 +7,6 @@ const contentImageUser = document.getElementById('content-image-user');
 const playerRegister = document.getElementById('player');
 const captureRegister = document.getElementById('capture');
 const canva = document.querySelector('.canva-snapshot');
-const buttonsConfirmYesOrNo = document.querySelector('.confirm-image');
 const canvaSnapshot = document.querySelector('.canva-snapshot');
 
 $("#confirm-password").focusout(function () {
@@ -40,24 +37,15 @@ function next() {
     removeAtributos(contentCaptureImagePageRegister, "hidden");
 }
 
-buttonYes.addEventListener('click', function () {
-    desativaCampos(buttonYes);
-    desativaCampos(buttonNo);
-    desativaCampos(textConfirm);
-    removeAtributos(buttonConfirm, "hidden");
+buttonNextPageRegister.addEventListener('click', function () {
+    function setTopo() {
+        $(window).scrollTop(0);
+    }
+    $(window).bind('scroll', setTopo);
 });
 
-buttonNo.addEventListener('click', function () {
-    ativaCampos(contentImageUser);
-    desativaCampos(canva);
-    ativaCampos(playerRegister);
-    ativaCampos(captureRegister);
-    desativaCampos(textConfirm);
-    desativaCampos(buttonsConfirmYesOrNo);
-    const verifica = canvaSnapshot.getAttribute("visibility");
-    if (verifica === null) {
-        ativaCampos(canva);
-    }
+buttonConfirm.addEventListener('click', function () {
+    removeAtributos(textConfirm, "hidden");
 });
 
 $("#cep").focusout(function () {

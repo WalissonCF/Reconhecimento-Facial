@@ -1,0 +1,22 @@
+.image-welcome {
+    height: 200px;
+    margin-top: 200px;
+    margin-left: 480px;
+}
+
+.text-logado {
+    color: white;
+    margin-top: 25px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.image-initial {
+    margin-top: px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    /* bottom: 0; */
+    z-index: -1;
+}

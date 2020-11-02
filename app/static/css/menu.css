@@ -28,7 +28,7 @@
 #sign-up:hover {
     color: var(--buttom-color);
     border-style: solid;
-    background-color: white;
+    background-color: transparent;
     border-color: var(--buttom-color);
     border: solid 1;
 }

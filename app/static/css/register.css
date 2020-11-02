@@ -140,3 +140,10 @@ form button:hover {
     margin-top: -65px;
     margin-left: 615px;   
 }
+
+.text-confirm {
+    margin-top: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}

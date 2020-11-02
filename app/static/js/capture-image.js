@@ -22,11 +22,19 @@ function removeAtributos(campo, atributoParaSerRemovido) {
     remove.removeAttribute(atributoParaSerRemovido);
 }
 
+function ativaCampos(campo) {
+    desativa = campo;
+    desativa.style.visibility = 'visible';
+}
+
 captureButton.addEventListener('click', function () {
-    const context = snapshot.getContext('2d');
+    // const context = snapshot.getContext('2d');
+    const context = snapshotCanvas.getContext('2d');
     // Draw the video frame to the canvas.
     context.drawImage(player, 0, 0, snapshotCanvas.width,
         snapshotCanvas.height);
+
+    console.log(snapshotCanvas.toDataURL());
 
     desativaCampos(player);
     desativaCampos(captureButton);
@@ -47,8 +55,12 @@ captureButton.addEventListener('click', function () {
 navigator.mediaDevices.getUserMedia({ video: true })
     .then(handleSuccess);
 
+desativaCampos(captureButton);
+
 navigator.getUserMedia({ video: true }, function () {
-    console.log("Okay");
+    $(document).ready(function(){
+        ativaCampos(captureButton);
+    });
 }, function () {
     // webcam is not available
     window.alert("Você não possui webcam!");
