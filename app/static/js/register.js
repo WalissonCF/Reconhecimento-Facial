@@ -37,6 +37,11 @@ function next() {
     removeAtributos(contentCaptureImagePageRegister, "hidden");
 }
 
+$('#content-form-register').submit(function(e){
+    e.preventDefault()
+    next()
+});
+
 buttonNextPageRegister.addEventListener('click', function () {
     function setTopo() {
         $(window).scrollTop(0);
