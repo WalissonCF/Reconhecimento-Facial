@@ -4,13 +4,16 @@ form {
     padding: 5px;
     border-radius: 8px;
     max-width: 800px;
-    margin-left: -870px;
+    margin-left: -885px;
     margin-top: -50px;
 }
 
 form fieldset {
+    background-color: white;
     margin-top: 100px;
-    border: 0;
+    border: solid 20px;
+    border-radius: 20px;
+    border-color: white;
 }
 
 form .field {
@@ -35,6 +38,7 @@ form input {
 form label {
     font-size: 14px;
     margin-bottom: 8px;
+    font-weight: bold;
 }
 
 form .field-group .field+.field {
@@ -78,62 +82,39 @@ form button:hover {
 }
 
 #register-user {
-    width: 300px;
-    height: 40px;
-    background-color: #2fd86e;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    border: 0;
-    margin-top: 10px;
-    transition: background-color 400ms;
+    width: 300px !important; 
+    height: 40px !important;
+    background-color: #2fd86e !important;
+    border-radius: 8px !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    border: 0 !important;
+    margin-top: 10px !important;
+    transition: background-color 400ms !important;
 }
 
 #register-user:hover {
-    background-color: white;
-    color: #2fd86e;
+    background-color: white !important;
+    color: #2fd86e !important;
 }
 
-#yes {
-    margin-top: 10px;
-    width: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 40px;
-    background-color: #2fd86e;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    border: 0;
-    margin-top: 10px;
-    transition: background-color 400ms;
+#next-page-register {
+    width: 500px !important; 
+    height: 60px !important;
+    background-color: #2fd86e !important;
+    border-radius: 8px !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    border: 0 !important;
+    margin-top: 10px !important;
+    transition: background-color 400ms !important;
 }
 
-#yes:hover {
-    background-color: white;
-    color: #2fd86e;
-}
-
-#no {
-    width: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 40px;
-    background-color: tomato;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    border: 0;
-    margin-top: 10px;
-    transition: background-color 400ms;
-}
-
-#no:hover {
-    background-color: white;
-    color: tomato;
+#next-page-register:hover {
+    background-color: white !important;
+    color: #2fd86e !important;
 }
 
 .confirm-image {
@@ -146,4 +127,13 @@ form button:hover {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
+}
+
+.image-background {
+    margin-top: 250px;
+    position: fixed;
+    height: 500px;
+    width: 100%;
+    /* bottom: 0; */
+    z-index: -1;
 }

@@ -42,13 +42,6 @@ $('#content-form-register').submit(function(e){
     next()
 });
 
-buttonNextPageRegister.addEventListener('click', function () {
-    function setTopo() {
-        $(window).scrollTop(0);
-    }
-    $(window).bind('scroll', setTopo);
-});
-
 buttonConfirm.addEventListener('click', function () {
     removeAtributos(textConfirm, "hidden");
 });
