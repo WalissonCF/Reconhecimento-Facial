@@ -1,7 +1,5 @@
-
-
 function requestUser() {
-
+    const canvas = document.getElementById('snapshot')
     let dataUser = new FormData();
     dataUser.append("fistname", $("#name").val())
     dataUser.append("lastname", $("#last-name").val())
@@ -13,6 +11,7 @@ function requestUser() {
     dataUser.append("neighborhood", $("#neighborhood").val())
     dataUser.append("city", $("#city").val())
     dataUser.append("state", $("#state").val())
+    dataUser.append("image", canvas.toDataURL())
 
 
 
