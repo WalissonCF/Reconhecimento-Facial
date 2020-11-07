@@ -1,6 +1,13 @@
+from app import app
 import mysql.connector
 
-cnx = mysql.connector.connect(user="root", database="recognition_system")
+cnx = mysql.connector.connect(
+    host = app.config['HOST'],
+    user = app.config['USERDB'],
+    database = app.config['DATABASE'],
+    password = app.config['PASSWORDDB']
+)
+
 consult = cnx.cursor()
 
 
