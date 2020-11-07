@@ -1,10 +1,17 @@
+from app import app
 from app.exceptions.registerException import RegisteredUser
 from app.models.passwordEncoder import encoder
-from app.models import address
+from app.models import address, recognition_face
 import mysql.connector
 import json
 
-cnx = mysql.connector.connect(user="root", database="recognition_system")
+cnx = mysql.connector.connect(
+    host = app.config['HOST'],
+    user = app.config['USERDB'],
+    database = app.config['DATABASE'],
+    password = app.config['PASSWORDDB']
+)
+
 consult = cnx.cursor()
 
 
@@ -75,6 +82,7 @@ def register_user(new_user):
             )
         )
         address.register_address(new_user)
+        recognition_face.register_face(new_user)
     except Exception as ex:
         print(ex)
         cnx.rollback()
