@@ -7,7 +7,7 @@ function loginUser() {
     formdata.append('image', canvas.toDataURL());
 
     var settings = {
-        "url": "http://127.0.0.1:5000/validCredentials",
+        "url": "http://127.0.0.1:8085/facialrecognition",
         "method": "POST",
         "timeout": 0,
         "processData": false,
@@ -18,9 +18,10 @@ function loginUser() {
 
     $.ajax(settings).done(function (response) {
         callback = JSON.parse(response)
+        console.log(callback)
         if(callback.authenticated == true){
             window.alert('Bem vindo ao Sistema')
-            window.location.href = "http://127.0.0.1:5000/index"
+            // window.location.href = "http://127.0.0.1:5000/index"
         } else {
             window.alert('Credenciais não conferem')
         }
