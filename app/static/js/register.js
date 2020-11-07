@@ -1,13 +1,20 @@
-const formPageRegister = document.getElementById('content-form-register');
-const buttonNextPageRegister = document.getElementById('next-page-register');
-const buttonConfirm = document.getElementById('register-user');
-const contentCaptureImagePageRegister = document.querySelector('.capture-image-user');
-const textConfirm = document.querySelector('.text-confirm');
-const contentImageUser = document.getElementById('content-image-user');
-const playerRegister = document.getElementById('player');
-const captureRegister = document.getElementById('capture');
-const canva = document.querySelector('.canva-snapshot');
-const canvaSnapshot = document.querySelector('.canva-snapshot');
+const formRegister = document.getElementById('content-form-register');
+const captureImageRegister = document.querySelector('.capture-image-user');
+
+
+// $('#password').focusout(function(){
+//     if($("#password").val().length < 7 && $("#password").val().length > 0 ){
+//         window.alert('A senha deve ter mais do que 7 caracteres!');
+//         $("#password").val('')
+//     }
+// });
+
+$('#username').focusout(function () {
+    if ($("#username").val().length < 7 && $("#username").val().length > 0) {
+        window.alert('O nome do usuario ter mais pelo menos 7 caracteres!');
+        $("#username").val('')
+    }
+});
 
 $("#confirm-password").focusout(function () {
     if ($("#password").val() != $("#confirm-password").val()) {
@@ -16,35 +23,25 @@ $("#confirm-password").focusout(function () {
 
 });
 
-function desativaCampos(campo) {
-    desativa = campo;
-    desativa.style.visibility = 'hidden';
+function changeStateField(field, newState) {
+    changeField = field;
+    changeField.style.visibility = newState;
 }
 
-function ativaCampos(campo) {
-    desativa = campo;
-    desativa.style.visibility = 'visible';
+
+function removeAtributos(field, state) {
+    remove = field;
+    remove.removeAttribute(state);
 }
 
-function removeAtributos(campo, atributoParaSerRemovido) {
-    remove = campo;
-    remove.removeAttribute(atributoParaSerRemovido);
-}
 
-function next() {
-    desativaCampos(formPageRegister);
-    removeAtributos(contentCaptureImagePageRegister, "hidden");
-    removeAtributos(contentCaptureImagePageRegister, "hidden");
-}
-
-$('#content-form-register').submit(function(e){
+$('#content-form-register').submit(function (e) {
     e.preventDefault()
-    next()
+    changeStateField(formRegister, 'hidden');
+    removeAtributos(captureImageRegister, "hidden");
+    removeAtributos(captureImageRegister, "hidden");
 });
 
-buttonConfirm.addEventListener('click', function () {
-    removeAtributos(textConfirm, "hidden");
-});
 
 $("#cep").focusout(function () {
 

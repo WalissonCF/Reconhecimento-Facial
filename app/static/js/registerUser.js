@@ -1,3 +1,11 @@
+const textRecused = document.getElementById('recused-register');
+const textConfirm = document.getElementById('confirm-register');
+
+function removeAtributos(campo, atributoParaSerRemovido) {
+    remove = campo;
+    remove.removeAttribute(atributoParaSerRemovido);
+}
+
 function requestUser() {
     const canvas = document.getElementById('snapshot')
     let dataUser = new FormData();
@@ -28,7 +36,11 @@ function requestUser() {
 
     $.ajax(settings).done(function (response) {
         callback = JSON.parse(response)
-        console.log(callback)
+        if(callback.register == true){
+            removeAtributos(textConfirm, "hidden");
+        }else{
+            removeAtributos(textRecused, "hidden");
+        }
     });
 
 }

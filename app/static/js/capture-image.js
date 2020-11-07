@@ -1,68 +1,55 @@
-const player = document.getElementById('player');
-const snapshotCanvas = document.getElementById('snapshot');
+const playerImage = document.getElementById('player');
+const capturedImage = document.getElementById('snapshot');
 const captureButton = document.getElementById('capture');
-const login = document.getElementById('content-login');
-const aviso = document.querySelector('.svg-alert');
-const mensagemDeAviso = document.querySelector('.text-info-p');
-const buttonsConfirm = document.querySelector('.confirm');
-const buttonsConfirmImage = document.querySelector('.confirm-image');
+const contentLogin = document.getElementById('content-login');
+const notifications = document.querySelector('.svg-alert');
+const warningMessage = document.querySelector('.text-info-p');
+const confirmButton = document.querySelector('.confirm');
 
 const handleSuccess = function (stream) {
-    // Attach the video stream to the video element and autoplay.
-    player.srcObject = stream;
+    playerImage.srcObject = stream;
 };
 
-function desativaCampos(campo) {
-    desativa = campo;
-    desativa.style.visibility = 'hidden';
+function changeStateFields(field, newState) {
+    changeField = field;
+    changeField.style.visibility = newState;
+
 }
 
-function removeAtributos(campo, atributoParaSerRemovido) {
-    remove = campo;
-    remove.removeAttribute(atributoParaSerRemovido);
+function enableField(field, state) {
+    remove = field;
+    remove.removeAttribute(state);
 }
 
-function ativaCampos(campo) {
-    desativa = campo;
-    desativa.style.visibility = 'visible';
-}
 
-captureButton.addEventListener('click', function () {
-    // const context = snapshot.getContext('2d');
-    const context = snapshotCanvas.getContext('2d');
-    // Draw the video frame to the canvas.
-    context.drawImage(player, 0, 0, snapshotCanvas.width,
-        snapshotCanvas.height);
+$('#capture').click(function () {
+    const context = capturedImage.getContext('2d');
+    context.drawImage(playerImage, 0, 0, capturedImage.width,
+        capturedImage.height);
 
-    console.log(snapshotCanvas.toDataURL());
-
-    desativaCampos(player);
-    desativaCampos(captureButton);
-    if ($("#content-login").length) { 
-        removeAtributos(login, "hidden"); 
-    } 
-    desativaCampos(aviso);
-    desativaCampos(mensagemDeAviso);
-    removeAtributos(snapshotCanvas, "hidden");
-    if ($(".confirm").length) { 
-        removeAtributos(buttonsConfirm, "hidden"); 
+    changeStateFields(playerImage, 'hidden');
+    changeStateFields(captureButton, 'hidden');
+    if ($("#content-login").length) {
+        enableField(contentLogin, "hidden");
     }
-    if ($(".confirm-image").length) { 
-        removeAtributos(buttonsConfirmImage, "hidden"); 
+    changeStateFields(notifications, 'hidden');
+    changeStateFields(warningMessage, 'hidden');
+    enableField(capturedImage, "hidden");
+    if ($(".confirm").length) {
+        enableField(confirmButton, "hidden");
     }
 });
 
 navigator.mediaDevices.getUserMedia({ video: true })
     .then(handleSuccess);
 
-desativaCampos(captureButton);
+changeStateFields(captureButton, 'hidden');
 
 navigator.getUserMedia({ video: true }, function () {
-    $(document).ready(function(){
-        ativaCampos(captureButton);
+    $(document).ready(function () {
+        changeStateFields(captureButton, 'visible');
     });
 }, function () {
-    // webcam is not available
     window.alert("Você não possui webcam!");
     console.log("Erro!");
 });
