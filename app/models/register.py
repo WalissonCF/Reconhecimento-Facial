@@ -81,6 +81,7 @@ def register_user(new_user):
                 encoder(new_user.get('password'))
             )
         )
+        cnx.commit()
         address.register_address(new_user)
         recognition_face.register_face(new_user)
     except Exception as ex:
