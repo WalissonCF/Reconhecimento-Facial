@@ -1,23 +1,35 @@
 import mysql.connector
 import base64
+from app import app
 
-cnx = mysql.connector.connect(user="root", database="recognition_system")
+cnx = mysql.connector.connect(
+    database=app.config['DATABASE'],
+    user= app.config['USERDB'], 
+    password= app.config['PASSWORDDB'], 
+    host= app.config['HOST']
+)
+
 consult = cnx.cursor()
 
 def register_face(image_file):
-    image_converted = convertToBase64(image_file)
-    insertImage(image_converted)
+    image_converted = adjust_base64(image_file['image'])
+    insertImage(image_converted,image_file['username'])
 
 
 
-def insertImage(base64image):
-    query = "INSERT INTO IMAGES (IMAGE) values(%s)"
+def insertImage(base64image,username):
+    query = "INSERT INTO IMAGES (IMAGE,USERNAME) values(%s, %s)"
     try:
-        consult.execute(query,(base64image,))
+        consult.execute(
+            query,
+            (
+                base64image,
+                username,
+            )
+        )
     except Exception as identifier:
         print(identifier)
 
-def convertToBase64():
-    with open('fabio.jpeg', 'rb') as image:
-        base64image = base64.b64encode(image.read())
-        return base64image
+
+def adjust_base64(base64):
+    return base64.replace('data:image/png;base64,',"")
