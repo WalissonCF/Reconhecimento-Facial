@@ -1,5 +1,8 @@
 const textRecused = document.getElementById('recused-register');
 const textConfirm = document.getElementById('confirm-register');
+const buttonRegister = document.getElementById('register-user');
+var msg;
+
 
 function removeAtributos(campo, atributoParaSerRemovido) {
     remove = campo;
@@ -38,8 +41,14 @@ function requestUser() {
         callback = JSON.parse(response)
         if(callback.register == true){
             removeAtributos(textConfirm, "hidden");
-        }else{
-            removeAtributos(textRecused, "hidden");
+            window.location.href = "http://127.0.0.1:5000/login"
+        }
+        if(callback.error != 'None' && callback.register == false){
+            changeStateField(captureImageRegister,'hidden')
+            changeStateField(buttonRegister, "hidden")
+            changeStateField(formRegister, "visible")
+            window.alert(callback.error)
+        
         }
     });
 

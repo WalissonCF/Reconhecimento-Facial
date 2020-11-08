@@ -2,12 +2,13 @@ const formRegister = document.getElementById('content-form-register');
 const captureImageRegister = document.querySelector('.capture-image-user');
 
 
-// $('#password').focusout(function(){
-//     if($("#password").val().length < 7 && $("#password").val().length > 0 ){
-//         window.alert('A senha deve ter mais do que 7 caracteres!');
-//         $("#password").val('')
-//     }
-// });
+
+$('#password').focusout(function(){
+    if($("#password").val().length < 7 && $("#password").val().length > 0 ){
+        window.alert('A senha deve ter mais do que 7 caracteres!');
+        $("#password").val('')
+    }
+});
 
 $('#username').focusout(function () {
     if ($("#username").val().length < 7 && $("#username").val().length > 0) {
@@ -39,7 +40,10 @@ $('#content-form-register').submit(function (e) {
     e.preventDefault()
     changeStateField(formRegister, 'hidden');
     removeAtributos(captureImageRegister, "hidden");
-    removeAtributos(captureImageRegister, "hidden");
+    if(captureImageRegister.style.visibility == 'hidden' && callback.error != 'None'){
+        changeStateField(captureImageRegister, "visible")
+        changeStateField(buttonRegister, "visible")
+    }
 });
 
 
