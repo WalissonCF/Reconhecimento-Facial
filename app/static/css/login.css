@@ -39,7 +39,7 @@ form .field {
     margin-left: 24px;
 }
 
-form #submit {
+form #login-user {
     margin-left: 24px;
     width: 235px;
     height: 40px;
@@ -53,7 +53,7 @@ form #submit {
     transition: background-color 400ms;
 }
 
-form #submit:hover {
+form #login-user:hover {
     background-color: #2fd86e;
 }
 
@@ -66,3 +66,4 @@ form #submit:hover {
     /* bottom: 0; */
     z-index: -1;
 }
+
