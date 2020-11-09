@@ -1,5 +1,7 @@
 
-function loginUser() {
+$('#content-login').submit(function(event) {
+    event.preventDefault();
+    console.log('passei')
     var canvas = document.getElementById('snapshot')
     var formdata = new FormData();
     formdata.append('username', $("#username").val());
@@ -27,5 +29,5 @@ function loginUser() {
             window.location.href = "http://127.0.0.1:5000/login"
         }
     });
-}
+})
 
